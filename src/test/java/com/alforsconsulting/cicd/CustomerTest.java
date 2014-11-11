@@ -16,7 +16,7 @@ public class CustomerTest {
         double balance = 10.50;
 
         Customer customer = new Customer(name);
-        Account account = new Account(AccountType.CHECKING, balance);
+        Account account = new CheckingAccount(balance);
         int accountNumber = account.getAccountNumber();
 System.out.println("account #: " + accountNumber);
         customer.addAccount(account);
@@ -31,13 +31,13 @@ System.out.println("account #: " + accountNumber);
         double balance = 10.50;
 
         Customer customer = new Customer(name);
-        Account account = new Account(AccountType.CHECKING, balance);
+        Account account = new CheckingAccount(balance);
 
         int accountNumber = account.getAccountNumber();
         customer.addAccount(account);
 
         // add duplicate account
-        Account duplicateAccount = new Account(accountNumber, AccountType.CHECKING, balance);
+        Account duplicateAccount = new CheckingAccount(accountNumber, balance);
         customer.addAccount(duplicateAccount);
     }
 
