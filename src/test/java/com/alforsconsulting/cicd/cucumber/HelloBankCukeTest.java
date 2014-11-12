@@ -1,4 +1,4 @@
-package com.alforsconsulting.cicd;
+package com.alforsconsulting.cicd.cucumber;
 
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;

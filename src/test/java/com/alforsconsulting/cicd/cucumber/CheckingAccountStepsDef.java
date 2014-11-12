@@ -1,4 +1,4 @@
-package com.alforsconsulting.cicd;
+package com.alforsconsulting.cicd.cucumber;
 
 import com.alforsconsulting.cicd.CheckingAccount;
 import com.alforsconsulting.cicd.InsufficientFundsException;
