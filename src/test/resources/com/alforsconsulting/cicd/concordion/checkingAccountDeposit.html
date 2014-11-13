@@ -1,0 +1,19 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<body>
+<code>
+    The Gherkin statement:
+    <b>Scenario:</b> A deposit should increase the value of the account
+    <b>Given</b> I have an account with 100
+    <b>When</b> I make a deposit of 50
+    <b>Then</b> there should be 150 in the account
+
+    could be re-worded as:
+</code>
+<p>
+    After depositing <span concordion:set="#depositAmount">50.00</span>
+    into a checking account with an initial balance of <span concordion:set="#initialBalance">100.00</span>
+    the new balance will be : <span concordion:assertEquals="validateDeposit(#initialBalance, #depositAmount)">150.0</span>
+</p>
+</body>
+</html>
+

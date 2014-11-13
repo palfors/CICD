@@ -25,6 +25,10 @@
             <artifactId>cucumber-junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.concordion</groupId>
+            <artifactId>concordion</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -46,6 +50,11 @@
                 <artifactId>cucumber-junit</artifactId>
                 <version>1.1.5</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.concordion</groupId>
+                <artifactId>concordion</artifactId>
+                <version>1.4.4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
