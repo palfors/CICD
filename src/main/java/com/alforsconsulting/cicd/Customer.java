@@ -13,6 +13,11 @@ public class Customer {
     private String name = null;
     private Map<Integer, Account> accounts = new HashMap<Integer, Account>();
 
+    public Customer()
+    {
+
+    }
+
     public Customer(String name)
     {
         this.name = name;
@@ -26,6 +31,12 @@ public class Customer {
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public void addCheckingAccount(double initialBalance) throws DuplicateAccountException
+    {
+        Account account = new CheckingAccount(initialBalance);
+        addAccount(account);
     }
 
     public void addAccount(Account account) throws DuplicateAccountException

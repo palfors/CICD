@@ -13,6 +13,17 @@ public class HelloBank
 
     private Map<String, Customer> customers = new HashMap<String, Customer>();
 
+    public void addCustomer(String name) throws DuplicateCustomerException
+    {
+        // check if account exists
+        if (customers.containsKey(name))
+        {
+            throw new DuplicateCustomerException();
+        }
+
+        addCustomer(new Customer(name));
+    }
+
     public void addCustomer(Customer customer) throws DuplicateCustomerException
     {
         // check if account exists
