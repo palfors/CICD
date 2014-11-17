@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" %>
+<%@ page import="java.util.List" %>
 <%@ page import="com.alforsconsulting.cicd.*" %>
 
 <html>
 <body>
 
 Welcome to HelloBank!
-
+<br>
+<br>
 <jsp:useBean id="helloBank" class="com.alforsconsulting.cicd.HelloBank" scope="session"/>
 
 <form method="post" action="customer.jsp">
@@ -21,6 +23,16 @@ Welcome to HelloBank!
 	Create Customer: <br>
 	Name: <input name="name" type="text"> <input type="submit">
 </form>
+
+<br><br>
+Current Customers:
+<br>
+<%
+List<Customer> customers = helloBank.getCustomers();
+for (Customer customer : customers) {
+		out.println(customer.getName() + "<br>");
+}
+%>
 
 </body>
 </html>
