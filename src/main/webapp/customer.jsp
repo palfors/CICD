@@ -11,10 +11,10 @@
 <%
 if ("login".equals(request.getParameter("action"))) {
 	// get the customer from helloBank
-    customer = helloBank.getCustomer(request.getParameter("name"));
+    customer = helloBank.getCustomer(request.getParameter("loginName"));
 }
 else if ("create".equals(request.getParameter("action"))) {      
-	String name = request.getParameter("name");
+	String name = request.getParameter("createName");
 	try {
 		helloBank.addCustomer(name);
 

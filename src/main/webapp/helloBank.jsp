@@ -13,7 +13,7 @@ Welcome to HelloBank!
 <form method="post" action="customer.jsp">
 	<input type="hidden" name="action" value="login">
 	Login: <br>
-	Name: <input name="name" type="text"> <input type="submit">
+	Name: <input name="loginName" type="text"> <input id="loginSubmit" type="submit">
 </form>
 
 <br><br>
@@ -21,7 +21,7 @@ Welcome to HelloBank!
 <form method="post" action="customer.jsp">
 	<input type="hidden" name="action" value="create">
 	Create Customer: <br>
-	Name: <input name="name" type="text"> <input type="submit">
+	Name: <input name="createName" type="text"> <input id="createSubmit" type="submit">
 </form>
 
 <br><br>

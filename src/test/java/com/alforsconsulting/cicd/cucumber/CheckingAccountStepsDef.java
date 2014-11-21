@@ -2,12 +2,16 @@ package com.alforsconsulting.cicd.cucumber;
 
 import com.alforsconsulting.cicd.CheckingAccount;
 import com.alforsconsulting.cicd.InsufficientFundsException;
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import java.util.List;
+import java.util.Map;
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 
 /**
  * Created by palfors on 11/11/14.
@@ -57,6 +61,28 @@ public class CheckingAccountStepsDef {
     public void the_balance_should_remain(double expectedBalance) throws Throwable
     {
         assertEquals("Overdraw of checking account should not have changed the balance!", expectedBalance, account.getBalance(), 0);
+    }
+
+    @Given("the following deposits are applied")
+    public void the_following_deposits_are_applied(DataTable dataTable) throws Throwable
+    {
+        List<Map<String, String>> dataList = dataTable.asMaps();
+
+        Double calculatedResult = null;
+        int row = 0;
+
+        for (Map<String,String> map : dataList)
+        {
+            row++;
+
+            Double initialBalance = new Double(map.get("initial"));
+            Double deposit = new Double(map.get("deposit"));
+            Double result = new Double(map.get("result"));
+
+            calculatedResult = initialBalance + deposit;
+
+            assertEquals("Failed on row " + row, result, calculatedResult);
+        }
     }
 
 }
