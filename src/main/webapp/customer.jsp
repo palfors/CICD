@@ -21,7 +21,7 @@ else if ("create".equals(request.getParameter("action"))) {
         customer = helloBank.getCustomer(name);
 	}
 	catch (DuplicateCustomerException e) {
-		out.println("Customer [" + name + "] already exists");        
+		out.println("<div id=\"warning\">Customer [" + name + "] already exists</div>");
 	}
 }
 else if ("addAccount".equals(request.getParameter("action"))) {
@@ -38,27 +38,31 @@ else if ("addAccount".equals(request.getParameter("action"))) {
 
 <% if (customer == null) { %>
 
-Customer does not exist!
+<div id="warning">Customer does not exist!</div>
 
 <% } else { %>
+<div id="customerInfo">
     Customer: <%=customer.getName()%>
     <br>
     <br>
 
-    Accounts:<br>
-<%
-    List<Account> accounts = customer.getAccounts();
-    for (Account account : accounts) {
-            out.println(account.getAccountNumber() + ": Balance $" + account.getBalance() + "<br>");
-    }
-%>
-    <br><br>
-    Add Account:
-    <form method="post" action="customer.jsp">
-        <input type="hidden" name="action" value="addAccount">
-        <input type="hidden" name="name" value="<%=customer.getName()%>">
-        Initial Balance: <input name="initialBalance" type="text"> <input type="submit">
-    </form>
+    <div id="accounts">
+        Accounts:<br>
+    <%
+        List<Account> accounts = customer.getAccounts();
+        for (Account account : accounts) {
+                out.println(account.getAccountNumber() + ": Balance $" + account.getBalance() + "<br>");
+        }
+    %>
+        <br><br>
+        Add Account:
+        <form method="post" action="customer.jsp">
+            <input type="hidden" name="action" value="addAccount">
+            <input type="hidden" name="name" value="<%=customer.getName()%>">
+            Initial Balance: <input name="initialBalance" type="text"> <input type="submit">
+        </form>
+    </div>
+</div>
 <% } %>
 
 </body>
