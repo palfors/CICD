@@ -6,9 +6,9 @@ import gherkin.formatter.Format;
 /**
  * Created by palfors on 11/11/14.
  */
-public class CheckingAccountDepositTest {
+public class CheckingAccountDepositIT {
 
-    public CheckingAccountDepositTest()
+    public CheckingAccountDepositIT()
     {
     }
 

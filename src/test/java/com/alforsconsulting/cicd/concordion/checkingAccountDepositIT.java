@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
  * Created by palfors on 11/12/14.
  */
 @RunWith(ConcordionRunner.class)
-public class checkingAccountDepositTest
+public class checkingAccountDepositIT
 {
 
     public double validateDeposit(double initialBalance, double depositAmount)
