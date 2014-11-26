@@ -67,6 +67,28 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>plugins</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/fitnesse</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/test/resources/com/alforsconsulting/cicd/fitnesse</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.18</version>
                 <executions>
@@ -78,7 +100,49 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>uk.co.javahelp.fitnesse</groupId>
+                <artifactId>fitnesse-launcher-maven-plugin</artifactId>
+                <configuration>
+                    <testResourceDirectory>src/test/resources/com/alforsconsulting/cicd/fitnesse</testResourceDirectory>
+                    <launches>
+                        <launch>
+                            <suite>HelloBankTestSuite</suite>
+                        </launch>
+                    </launches>
+                    <useProjectDependencies>
+                        <scope>test</scope>
+                        <scope>runtime</scope>
+                    </useProjectDependencies>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>fitnesse</id>
+            <!--
+            This profile will boot FitNesse to automatically run the configured test suite. Simply run 'mvn verify -P auto'
+             -->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>uk.co.javahelp.fitnesse</groupId>
+                        <artifactId>fitnesse-launcher-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>set-up</goal>
+                                    <goal>run-tests</goal>
+                                    <goal>tear-down</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

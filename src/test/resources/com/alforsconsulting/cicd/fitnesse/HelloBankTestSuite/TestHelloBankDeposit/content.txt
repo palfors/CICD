@@ -1,0 +1,17 @@
+!define TEST_SYSTEM {slim}
+
+!path /Users/palfors/dvlp/CICD/target/classes
+!path /Users/palfors/dvlp/CICD/target/test-classes
+
+|import|
+|com.alforsconsulting.cicd.fitnesse|
+
+!3 Scenario: A deposit should increase the value of the account
+!4   Given: I have an account with 100
+!4   When: I make a deposit of 50
+!4   Then: there should be 150 in the account
+
+!|checking account deposit IT|
+|balance|amount|result?|
+|100.45 |50.11 |150.56|
+|100.45 |40.05 |200.00|
