@@ -177,8 +177,8 @@
     </distributionManagement>
 
     <scm>
-        <connection>git:file:///Users/palfors/dvlp/CICD</connection>
-        <developerConnection>git:file:///Users/palfors/dvlp/CICD</developerConnection>
+        <connection>scm:git:file://localhost/Users/palfors/dvlp/CICD</connection>
+        <developerConnection>scm:git:file://localhost/Users/palfors/dvlp/CICD</developerConnection>
     </scm>
 
 </project>
