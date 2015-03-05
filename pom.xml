@@ -4,7 +4,7 @@
 
     <groupId>com.alforsconsulting.cicd</groupId>
     <artifactId>cicd</artifactId>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <dependencies>
@@ -177,7 +177,7 @@
     <scm>
         <connection>scm:git:file://localhost/Users/palfors/dvlp/CICD</connection>
         <developerConnection>scm:git:file://localhost/Users/palfors/dvlp/CICD</developerConnection>
-      <tag>cicd-1.0.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>
