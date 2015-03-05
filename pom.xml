@@ -177,7 +177,7 @@
     </distributionManagement>
 
     <scm>
-        <developerConnection>scm:git:file:///Users/palfors/dvlp/CICD</developerConnection>
+        <developerConnection>git:file:///Users/palfors/dvlp/CICD</developerConnection>
     </scm>
 
 </project>
