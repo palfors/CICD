@@ -176,9 +176,9 @@
 
     <scm>
         <!--<connection>scm:git:file://localhost/Users/palfors/dvlp/CICD</connection>-->
-        <connection>scm:git:ssh://github.com/palfors/CICD</connection>
+        <connection>scm:git:https://github.com/palfors/CICD</connection>
         <!--<developerConnection>scm:git:file://localhost/Users/palfors/dvlp/CICD</developerConnection>-->
-        <developerConnection>scm:git:ssh://github.com/palfors/CICD</developerConnection>
+        <developerConnection>scm:git:https://github.com/palfors/CICD</developerConnection>
       <tag>HEAD</tag>
   </scm>
 
