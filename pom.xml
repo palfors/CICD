@@ -4,7 +4,7 @@
 
     <groupId>com.alforsconsulting.cicd</groupId>
     <artifactId>cicd</artifactId>
-    <version>1.0.0.17</version>
+    <version>1.0.0.18-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <dependencies>
